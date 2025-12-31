@@ -1,187 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Design Template</title>
-    <style>
-        /* --- 1. SETTING THE FOUNDATION (THEME UPDATE) --- */
-        :root {
-            /* YOUR PORTFOLIO COLOR PALETTE */
-            --bg-color: #0f172a;       /* Dark Blue-Grey Background */
-            --bg-secondary: #1e293b;   /* Lighter Blue-Grey (for cards/boxes) */
-            --text-main: #e2e8f0;      /* Light Text */
-            --text-muted: #94a3b8;     /* Muted Grey Blue */
-            --accent-color: #38bdf8;   /* Cyan/Sky Blue Accent */
-            --accent-hover: #0ea5e9;   /* Slightly darker blue for hover */
-            --border-color: #1e293b;   /* Borders match secondary bg */
-        }
+/* --- VARIABLES (The "Slate" Theme) --- */
+:root {
+    --bg-primary: #0f172a;    /* Deep Blue/Black */
+    --bg-secondary: #1e293b;  /* Lighter Blue/Grey for cards */
+    --text-primary: #f8fafc;  /* Almost White */
+    --text-secondary: #94a3b8; /* Muted Grey */
+    --accent: #38bdf8;        /* Sky Blue */
+    --accent-hover: #0ea5e9;  /* Darker Blue */
+    --border: #334155;        /* Subtle Border */
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* --- RESET & GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            /* Match your portfolio font */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
 
-        /* --- 2. LAYOUT UTILITIES --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
 
-        /* --- 3. NAVIGATION BAR --- */
-        header {
-            padding: 20px 0;
-            background-color: var(--bg-secondary); /* Darker header bar */
-            border-bottom: 1px solid #334155; /* Subtle border */
-        }
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* --- NAVBAR --- */
+.navbar {
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.9); /* Glass effect */
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+}
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--accent-color); /* Logo in accent color */
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .nav-links a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: var(--text-main); /* White text */
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+.dot { color: var(--accent); }
 
-        /* --- 4. HERO SECTION --- */
-        .hero-section { /* Renamed class to avoid conflict with inner div */
-            padding: 80px 0;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { color: var(--text-secondary); font-size: 0.9rem; }
+.nav-links a:hover { color: var(--accent); }
 
-        .hero-content {
-            flex: 1;
-        }
+.btn-small {
+    border: 1px solid var(--accent);
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: var(--accent) !important;
+}
 
-        h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: #ffffff; /* Pure white for headings */
-        }
+.btn-small:hover { background-color: rgba(56, 189, 248, 0.1); }
 
-        p.subtitle {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            max-width: 500px;
-        }
+/* --- HERO SECTION --- */
+.hero {
+    padding: 100px 0;
+    max-width: 800px;
+}
 
-        /* --- 5. BUTTONS (CALL TO ACTION) --- */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color); /* Dark text on light button for contrast */
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
+.greeting { color: var(--accent); font-weight: 600; margin-bottom: 10px; }
 
-        .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px); /* Slight lift effect */
-        }
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
 
-        /* Placeholder for where an image would go */
-        .hero-image-placeholder {
-            flex: 1;
-            height: 400px;
-            background-color: var(--bg-secondary); /* Dark Card Color */
-            border: 2px dashed #334155; /* Dashed border line */
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-family: monospace; /* Tech feel */
-        }
+.highlight { color: var(--text-secondary); }
 
-        /* --- 6. MOBILE RESPONSIVENESS --- */
-        @media (max-width: 768px) {
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 0;
-            }
-            
-            .hero-content {
-                width: 100%;
-            }
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
 
-            p.subtitle {
-                margin: 0 auto 30px auto;
-            }
+.cta-buttons { display: flex; gap: 20px; }
 
-            h1 {
-                font-size: 2.25rem;
-            }
-            
-            .nav-links {
-                display: none; 
-            }
-        }
-    </style>
-</head>
-<body>
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+}
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Mifthauddin</a>
-                <div class="nav-links">
-                    <a href="#">About</a>
-                    <a href="#">Skills</a>
-                    <a href="#">Contact</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+.btn-secondary {
+    border: 1px solid var(--text-secondary);
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: var(--text-primary);
+}
 
-    <div class="container">
-        <section class="hero-section"> 
-            <div class="hero-content">
-                <h1>Network Engineering & <span style="color: var(--accent-color);">Cloud Security</span></h1>
-                <p class="subtitle">Building robust infrastructure and securing enterprise networks. Student at Centennial College.</p>
-                <a href="#" class="btn">View Projects</a>
-            </div>
-            <div class="hero-image-placeholder">
-                &lt;Image_Placeholder /&gt;
-            </div>
-        </section>
-    </div>
+/* --- SECTIONS --- */
+.section { padding: 80px 0; }
+.section-title { font-size: 2rem; margin-bottom: 40px; }
+.section-subtitle { color: var(--text-secondary); margin-bottom: 30px; margin-top: -30px; }
 
-</body>
-</html>
+/* --- CARDS (Experience & Projects) --- */
+.card {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.company { color: var(--text-secondary); font-size: 0.9rem; }
+.date { color: var(--text-secondary); font-size: 0.9rem; }
+.card-desc { color: var(--text-secondary); margin-bottom: 15px; }
+
+/* --- GRID LAYOUTS --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* --- TAGS (Skills inside cards) --- */
+.tags { margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+.tag {
+    font-size: 0.8rem;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.link-text { color: var(--accent); font-weight: 600; }
+
+/* --- TECH STACK GRID --- */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.tech-item {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-secondary);
+    transition: 0.2s;
+}
+
+.tech-item:hover { color: var(--accent); background-color: #253045; }
+.tech-item i { font-size: 2rem; margin-bottom: 10px; display: block; }
+
+/* --- FOOTER --- */
+footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+}
+
+.socials { margin: 20px 0; }
+.socials a { margin: 0 15px; color: var(--text-secondary); font-size: 1.2rem; }
+.socials a:hover { color: var(--accent); }
+.copyright { color: var(--text-secondary); font-size: 0.8rem; }
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Simplified for mobile */
+    .card-header { flex-direction: column; }
+    .date { margin-top: 5px; display: block; }
+}

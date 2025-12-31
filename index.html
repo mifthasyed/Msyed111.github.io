@@ -3,89 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="icon" href="favicon.png.jpg" type="image/png">
+    <title>Mifthauddin | Network Engineer</title>
+    <link rel="icon" href="favicon.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">My Portfolio</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <header id="home">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Miftha Syed</span></h1>
-            <p>Computer Networking Student</p>
-            <a href="resume.pdf" class="btn">Download Resume</a>
-        </div>
-    </header>
-
-    <section id="skills" class="container">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Networking</h3>
-                <p>TCP/IP, VLANs, Cisco IOS, OSPF, BGP</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-server"></i>
-                <h3>Systems</h3>
-                <p>Windows Server, Linux, Active Directory</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-tools"></i>
-                <h3>Troubleshooting</h3>
-                <p>Hardware Repair, Ticket Management, Customer Support</p>
-            </div>
-        </div>
-    </section>
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <div class="project-item">
-            <h3>Computer Systems Technology – Networking</h3>
-            <p class="role">Centennial College | Toronto, ON</p>
-            <p><strong>Advanced Diploma</strong> (Jan 2024 – Present)</p>
-            <ul>
-                <li>Relevant Coursework: Network Engineering, Cloud Computing (AWS/Azure), Cyber Security, and Wireless Networking.</li>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Mifthauddin<span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Tech Stack</a></li>
+                <li><a href="resume.pdf" class="btn-small">Resume</a></li>
             </ul>
         </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <p class="greeting">Hi, I'm Mifthauddin</p>
+            <h1>Network Engineering Student & <br> <span class="highlight">IT Specialist.</span></h1>
+            <p class="subtitle">
+                Passionate about building robust infrastructure, securing enterprise networks, and cloud computing. 
+                Currently studying at Centennial College.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">Get in Touch</a>
+                <a href="resume.pdf" class="btn-secondary">Download Resume</a>
+            </div>
+        </div>
     </section>
 
-    <section id="projects" class="container bg-light">
-        <h2>Experience</h2>
-        <div class="project-list">
-            <div class="project-item">
-                <h3>ASH IT Consulting</h3>
-                <p class="role">IT Specialist (2nd Term)</p>
-                <p>Managed network configurations and provided technical support for enterprise clients.</p>
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3>IT Technical Analyst (Co-op)</h3>
+                        <p class="company">ASH IT Consulting | Toronto, ON</p>
+                    </div>
+                    <span class="date">May 2025 - Dec 2025</span>
+                </div>
+                <p class="card-desc">Supported enterprise users, managed Active Directory accounts, and troubleshot network connectivity issues.</p>
             </div>
-            <div class="project-item">
-                <h3>Personal Home Lab</h3>
-                <p class="role">Project</p>
-                <p>Built a virtualized server environment to practice Active Directory and network security.</p>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3>Computer Systems Technology - Networking</h3>
+                        <p class="company">Centennial College</p>
+                    </div>
+                    <span class="date">Jan 2024 - Present</span>
+                </div>
+                <p class="card-desc">Advanced Diploma. Focusing on Network Engineering, Cloud Computing (AWS/Azure), and Cyber Security.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid-2">
+                <div class="card project-card">
+                    <h3>Home Lab Environment</h3>
+                    <p class="card-desc">A virtualized enterprise network built from scratch using Proxmox.</p>
+                    <div class="tags">
+                        <span class="tag">Proxmox</span>
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">DNS/DHCP</span>
+                    </div>
+                    <a href="#" class="link-text">View Details &rarr;</a>
+                </div>
+
+                <div class="card project-card">
+                    <h3>Cloud Portfolio Website</h3>
+                    <p class="card-desc">A responsive portfolio site hosted on GitHub Pages with CI/CD deployment.</p>
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Git</span>
+                    </div>
+                    <a href="#" class="link-text">View Code &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <p class="section-subtitle">Technologies I work with.</p>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Networking</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-linux"></i>
+                    <span>Linux</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-windows"></i>
+                    <span>Windows Server</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS Cloud</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2>Contact Me</h2>
-        <p>Ready to work. Reach out below:</p>
-        <div class="socials">
-            <a href="www.linkedin.com/in/mifthauddin">LinkedIn</a>
-            <a href="mailto:syedmiftha09@gmail.com">Email Me</a>
+        <div class="container footer-content">
+            <h2>Let's Connect</h2>
+            <div class="socials">
+                <a href="https://linkedin.com/in/mifthauddin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 Mifthauddin. Built with code.</p>
         </div>
-        <br>
-        <p>&copy; 2025. Built from scratch.</p>
     </footer>
 
 </body>
 </html>
-
