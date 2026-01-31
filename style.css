@@ -1,12 +1,13 @@
 /* --- VARIABLES (The "Slate" Theme) --- */
 :root {
-    --bg-primary: #0f172a;    /* Deep Blue/Black */
-    --bg-secondary: #1e293b;  /* Lighter Blue/Grey for cards */
-    --text-primary: #f8fafc;  /* Almost White */
-    --text-secondary: #94a3b8; /* Muted Grey */
-    --accent: #38bdf8;        /* Sky Blue */
-    --accent-hover: #0ea5e9;  /* Darker Blue */
-    --border: #334155;        /* Subtle Border */
+    --bg-primary: #000000;    /* Deep Blue/Black */
+    --bg-secondary: #0a0a0a;  /* Lighter Blue/Grey for cards */
+    --text-primary: #00ff00;  /* Almost White */
+    --text-secondary: #00cc00; /* Muted Grey */
+    --accent: #33ff33;        /* Sky Blue */
+    --accent-hover: #00ff00;  /* Darker Blue */
+    --border: #004400;        /* Subtle Border */
+    --highlight: #adff2f;
 }
 
 /* --- RESET & GLOBAL --- */
@@ -17,12 +18,23 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-}
-
+    highlight{
+        background-color: var(--highlight);
+        color: #000000;
+        padding: 0 5px;
+    }
+    .btn-secondary{
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        background: transparent;
+    }
+    .btn-secondary: hover {
+        background: var(--accent);
+        color: #000000;
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -196,4 +208,5 @@ footer {
     .nav-links { display: none; } /* Simplified for mobile */
     .card-header { flex-direction: column; }
     .date { margin-top: 5px; display: block; }
+
 }
